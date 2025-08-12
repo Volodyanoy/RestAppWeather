@@ -38,10 +38,8 @@ public class MeasurementsRESTController {
 
     @GetMapping()
     public List<MeasurementDTO> getMeasurements(){
-        List<MeasurementDTO> measurementDTOList = measurementsService.findAll().stream().map(this::convertToMeasurementDTO).toList();
-        for(MeasurementDTO measurementDTO: measurementDTOList){
-            measurementDTO.setSensor(sensorsService.convertToSensorDTO(measurementDTO.getSensor()));
-        }
+        return  measurementsService.findAll().stream().map(measurementsService::convertToMeasurementDTO).toList();
+
     }
 
     @GetMapping("/rainyDaysCound")
