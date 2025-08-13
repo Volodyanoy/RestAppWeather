@@ -42,7 +42,7 @@ public class MeasurementsRESTController {
 
     }
 
-    @GetMapping("/rainyDaysCound")
+    @GetMapping("/rainyDaysCount")
     public RainyDaysCountDTO getCountRainyDays(){
         return measurementsService.countRainyDays();
     }
